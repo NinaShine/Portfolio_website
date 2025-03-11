@@ -9,11 +9,18 @@ const Education = () => {
       description: '1- M1 Intelligence Artificielle et Sciences des Données (Faculté des sciences)\n2- M1 Management Technologies et sciences (École Universitaire de management de Montpellier)'
     },
     {
-      degree: 'Licence en Informatique',
+      degree: 'Bachelor en Informatique',
       institution: 'Université de Montpellier, Faculté des sciences',
       period: '2021 - 2024',
       description: 'Spécialisation en développement web et applications mobiles. Réussite à l\'examen de certification PIX. Participation à la Coding Battle le shaker 2023 (parmi les 350 premiers).'
     },
+    {
+      degree: 'Licence 1 en Informatique',
+      institution: 'Université de Abderahman Mira Bejaia, Algérie',
+      period: '2020 - 2021',
+      description: 'Major en Analyse et Algèbre'
+    },
+
     {
       degree: 'Baccalauréat série Mathématiques',
       institution: 'Lycée HOURIA, Bejaia Algérie',
@@ -29,7 +36,12 @@ const Education = () => {
       date: '2024'
     },
     {
-      name: 'Certificate of Compilation (Anglais)',
+      name: 'Certification Pix',
+      issuer: 'Universite de Montpellier',
+      date: '2022'
+    },
+    {
+      name: 'Certificate of Compilation (Anglais)-B2',
       issuer: 'Cambridge Assessment English',
       date: '2019'
     },
@@ -37,13 +49,23 @@ const Education = () => {
       name: 'Formation d\'Algorithme Informatique',
       issuer: 'Syken College Bejaia, Algérie',
       date: '2021'
+    },
+    {
+      name: 'Formation agent de saisie',
+      issuer: 'IFTGIE Tusna Bejaia, Algérie',
+      date: '2021'
+    },
+    {
+      name: 'Formation EXCEL avancé',
+      issuer: 'IFTGIE Tusna Bejaia, Algérie',
+      date: '2021'
     }
   ];
 
   return (
     <section id="education" className="py-20">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Formation</h2>
+        <h2 className="section-title">Formation</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Mon parcours académique et mes certifications professionnelles.
         </p>
@@ -59,7 +81,14 @@ const Education = () => {
                   <h4 className="text-lg font-bold text-gray-800">{edu.degree}</h4>
                   <p className="text-gray-500 mt-1 md:mt-0">{edu.period}</p>
                 </div>
-                <p className="text-blue-600 font-medium mb-2">{edu.institution}</p>
+                <p className="font-medium" style={{
+                  background: 'linear-gradient(to right, var(--primary-color), var(--secondary-color))',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}>
+                  {edu.institution}
+                </p>
                 <p className="text-gray-600 whitespace-pre-line">{edu.description}</p>
               </div>
             ))}
@@ -75,7 +104,15 @@ const Education = () => {
                   <h4 className="text-lg font-bold text-gray-800">{cert.name}</h4>
                   <p className="text-gray-500 mt-1 md:mt-0">{cert.date}</p>
                 </div>
-                <p className="text-blue-600 font-medium">{cert.issuer}</p>
+                <p className="font-medium" style={{
+                  background: 'linear-gradient(to right, var(--primary-color), var(--secondary-color))',
+                  WebkitBackgroundClip: 'text',
+                  backgroundClip: 'text',
+                  color: 'transparent'
+                }}>
+                  {cert.issuer}
+                </p>
+                
               </div>
             ))}
           </div>

@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
-        <a href="#" className="text-2xl font-bold text-blue-600">Nina SALHI</a>
+        <a href="#" className="section-title">Nina SALHI</a>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-8">
@@ -38,8 +38,13 @@ const Header = () => {
             <a 
               key={link.name}
               href={link.href}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
-            >
+              className="text-gray-700 font-medium transition-colors 
+              hover:text-transparent hover:bg-clip-text"
+   style={{
+     background: 'linear-gradient(to right, var(--primary-color), var(--secondary-color))',
+     WebkitBackgroundClip: 'text',
+     backgroundClip: 'text'
+   }}            >
               {link.name}
             </a>
           ))}

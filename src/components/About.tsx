@@ -51,7 +51,7 @@ const About = () => {
           </div>
           <div className="social-links">
             <a 
-              href="https://github.com/nina-salhi" 
+              href="https://github.com/NinaShine" 
               target="_blank" 
               rel="noopener noreferrer"
               className="social-link"
@@ -67,7 +67,7 @@ const About = () => {
               <Linkedin size={24} />
             </a>
             <a 
-              href="mailto:nina.salhi08@gmail.com" 
+              href="mailto:salhinina.pro@gmail.com" 
               className="social-link"
             >
               <Mail size={24} />

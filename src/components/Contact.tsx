@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import emailjs from 'emailjs-com';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -20,26 +21,28 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitMessage('Votre message a été envoyé avec succès!');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      
-      // Clear success message after 5 seconds
-      setTimeout(() => {
-        setSubmitMessage('');
-      }, 5000);
-    }, 1500);
+    // Caster e.target en HTMLFormElement
+  const form = e.target as HTMLFormElement;
+  
+    emailjs.sendForm('service_a6yxvz7', 'template_fpayn5d', form, 'Hgrr4VJzDsIFoJt-Z')
+      .then(() => {
+        setSubmitMessage('Votre message a été envoyé avec succès!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setSubmitMessage(''), 5000);
+      })
+      .catch(() => {
+        setSubmitMessage('Erreur lors de l\'envoi, veuillez réessayer.');
+      });
+  
+    setIsSubmitting(false);
   };
 
   const contactInfo = [
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      value: 'nina.salhi08@gmail.com',
-      link: 'mailto:nina.salhi08@gmail.com'
+      value: 'salhinina.pro@gmail.com',
+      link: 'mailto:salhinina.pro@gmail.com'
     },
     {
       icon: <Phone size={24} />,
@@ -58,7 +61,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20">
       <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Contact</h2>
+        <h2 className="section-title">Contact</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Vous avez un projet en tête ou souhaitez discuter d'une opportunité? N'hésitez pas à me contacter!
         </p>
@@ -124,7 +127,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-70 disabled:cursor-not-allowed"
+              className="cta-button primary-cta"
             >
               {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
             </button>
@@ -141,7 +144,8 @@ const Contact = () => {
           <div className="space-y-6">
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start">
-                <div className="text-blue-600 mr-4">
+                <div className="text-black-800 mr-4">
+
                   {info.icon}
                 </div>
                 <div>
@@ -162,7 +166,7 @@ const Contact = () => {
           </div>
           
           <div className="mt-8">
-            <h4 className="text-lg font-semibold text-gray-800 mb-4">Langues</h4>
+            <h4 className="section-title">Langues</h4>
             <ul className="space-y-2 text-gray-600">
               <li>Français : Courant</li>
               <li>Anglais : Niveau B2</li>
@@ -172,7 +176,7 @@ const Contact = () => {
           </div>
           
           <div className="mt-8">
-            <h4 className="text-lg font-semibold text-gray-800 mb-4">Centres d'intérêt</h4>
+            <h4 className="section-title">Centres d'intérêt</h4>
             <ul className="space-y-2 text-gray-600">
               <li>Art (pratique de la peinture et du dessin)</li>
               <li>Tennis (1 an en club)</li>
