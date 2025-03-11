@@ -21,23 +21,22 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20">
-      <div className="text-center mb-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-4">Mes compétences</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+    <section id="skills" className="skills-section">
+      <div className="skills-header">
+        <h2 className="section-title">Mes compétences</h2>
+        <p className="section-description">
           Voici les technologies et outils avec lesquels j'ai travaillé et que j'utilise régulièrement dans mes projets.
         </p>
       </div>
-      
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="skills-grid">
         {skillCategories.map((category, index) => (
-          <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">{category.title}</h3>
-            <div className="flex flex-wrap gap-2">
+          <div key={index} className="skill-category">
+            <h3 className="category-title">{category.title}</h3>
+            <div className="skills-container">
               {category.skills.map((skill, skillIndex) => (
-                <span 
-                  key={skillIndex} 
-                  className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                <span
+                  key={skillIndex}
+                  className="skill-badge"
                 >
                   {skill}
                 </span>
