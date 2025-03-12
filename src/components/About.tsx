@@ -25,11 +25,10 @@ const About = () => {
           <h1 className="about-name">
             Bonjour, je suis Nina SALHI
           </h1>
-          <h2 className="about-title">Développeuse Full Stack & IA</h2>
+          <h2 className="about-title">22 ans</h2>
           <p className="about-description">
-            Étudiante en double Master Intelligence Artificielle et Management des Technologies, 
-            je suis passionnée par la création d'applications web modernes et l'intelligence artificielle. 
-            Je combine créativité et expertise technique pour développer des solutions innovantes.
+          Actuellement en double Master 1 en <strong>Intelligence Artificielle & Sciences des Données</strong> et <strong>Management des Sciences Numériques</strong>,
+           je suis passionnée par l’analyse de données, le développement et l’optimisation des systèmes intelligents.  Je suis à la <strong>recherche d’une alternance</strong> pour <strong>septembre 2025</strong>  en tant que <strong>Data Analyst, Data Engineer ou Développeuse Fullstack</strong>. Curieuse, rigoureuse et autonome, je souhaite mettre mes compétences au service d’une entreprise innovante.
           </p>
           
           <div className="about-cta-container">

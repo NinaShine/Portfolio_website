@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
+
 import Header from './components/Header';
 import About from './components/About';
 import Skills from './components/Skills';
