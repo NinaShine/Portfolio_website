@@ -6,7 +6,6 @@ import train from '../images/tarin.png';
 import calendar from '../images/agenda.png';
 import mots from '../images/jeuxMots.png';
 
-
 const Projects = () => {
   const projects = [
     {
@@ -14,7 +13,7 @@ const Projects = () => {
       description: 'Système interactif permettant à des robots de perfectionner leurs compétences en négociation en combinant prise de risque et apprentissage.',
       image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
       technologies: ['Python', 'Machine Learning', 'IA', 'Robotique'],
-     // liveUrl: 'https://project-example.com',
+      liveUrl: 'https://choices-eta.vercel.app/',
       githubUrl: 'https://github.com/NinaShine/TER_RiskReward'
     },
     {
@@ -22,7 +21,6 @@ const Projects = () => {
       description: 'Application multi-plateforme de gestion de stock accessible sur mobile, serveur et cloud.',
       image: hiveStockImage,
       technologies: ['Flutter', 'Node.js', 'Cloud'],
-      //liveUrl: 'https://project-example.com',
       githubUrl: 'https://github.com/AllanDwyre/TER-STOCK'
     },
     {
@@ -30,7 +28,6 @@ const Projects = () => {
       description: 'Plateforme permettant aux étudiants de répondre en temps réel aux questions des professeurs pendant les cours.',
       image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
       technologies: ['Flask', 'Python', 'JavaScript', 'WebSockets'],
-      //liveUrl: 'https://project-example.com',
       githubUrl: 'https://github.com/nina-salhi/project'
     },
     {
@@ -61,19 +58,18 @@ const Projects = () => {
       technologies: ['Big Data', 'Data Warehouse', 'SQL'],
       githubUrl: 'https://github.com/NinaShine/Big-Data-DW'
     }
-    
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="text-center mb-12">
-      <h2 className="section-title">Mes projets</h2>
+        <h2 className="section-title">Mes projets</h2>
         <p className="text-gray-600 max-w-2xl mx-auto">
           Découvrez une sélection de mes projets récents. Chaque projet représente un défi unique 
           que j'ai relevé en utilisant différentes technologies.
         </p>
       </div>
-      
+
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {projects.map((project, index) => (
           <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md transition-transform hover:scale-105">
@@ -87,7 +83,7 @@ const Projects = () => {
             <div className="p-6">
               <h3 className="text-xl font-bold text-gray-800 mb-2">{project.title}</h3>
               <p className="text-gray-600 mb-4">{project.description}</p>
-              
+
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.technologies.map((tech, techIndex) => (
                   <span 
@@ -98,19 +94,33 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-              
+
               <div className="flex gap-4">
-          
+                {/* Lien GitHub (disponible pour tous les projets) */}
                 <a 
                   href={project.githubUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1 "
+                  className="text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
                 >
                   <Github size={16} />
                   Code
                 </a>
+
+                {/* Lien Demo affiché UNIQUEMENT pour "Risky Business: Robot Negotiation" */}
+                {project.title === 'Risky Business: Robot Negotiation' && project.liveUrl && (
+                  <a
+                    href={project.liveUrl} 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-700 hover:text-gray-900 transition-colors flex items-center gap-1"
+                  >
+                    <Github size={16} />
+                    <span>Demo</span>
+                  </a>
+                )}
               </div>
+
             </div>
           </div>
         ))}
