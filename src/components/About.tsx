@@ -40,7 +40,7 @@ const About = () => {
               Me contacter
             </a>
             <a 
-              href="/cv.pdf" 
+              href="/cv-data-engineer-SALHI-NINA.pdf" 
               target="_blank" 
               className="cta-button secondary-cta"
             >
